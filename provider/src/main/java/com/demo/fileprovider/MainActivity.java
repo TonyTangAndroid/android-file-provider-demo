@@ -25,7 +25,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void provide(View view) {
         String content = "Hello FileProvider! ".concat(String.valueOf(System.currentTimeMillis()));
-        File file = new File(getFilesDir(), UUID.randomUUID().toString().concat(".txt"));
+      File root = getCacheDir();
+      File folder = new File(root, "tony_folder");
+      if (!folder.exists()){
+        boolean mkdirs = folder.mkdirs();
+        System.out.println(mkdirs);
+      }
+      File file = new File(folder, UUID.randomUUID().toString().concat(".txt"));
         if (!writeFile(file, content)) {
             return;
         }

@@ -1,3 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <paths>
-    <files-path name="shared_files" path=""/>
+  <cache-path
+    name="cache_path_root"
+    path="tony_folder" />
+  <external-path
+    name="external_path_root"
+    path="/Download" />
 </paths>
